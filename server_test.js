@@ -11,21 +11,14 @@ app.use(express.json());
 
 const mysql = require('mysql2');
 const db = require('./db/connection');
-const db = mysql.createConnection({
-    host: 'localhost',
-    // Your MySQL username,
-    user: 'root',
-    // Your MySQL password
-    password: 'Sql@2022ngin5783',
-    database: 'election'
-  },
-  console.log('Connected to the election database.')
-  
-  );
 
+
+  console.log('1');
   db.query(`SELECT * FROM candidates`, (err, rows) => {
     console.log(rows);
   })
+  console.log('2')
+
 
 app.get('/', (req, res) => {
     res.json({
